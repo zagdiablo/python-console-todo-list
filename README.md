@@ -9,7 +9,9 @@ is a simple text based todo list made in python
   <li><a href="https://www.python.org/">Install Python</a></li>
   <li>Make sure Python is defined on PATH</li>
   <li>Navigate to folder in CLI</li>
+  <li>Do: </li>
 </ol>
+
 ```bash
 python3 run.py
 ```
