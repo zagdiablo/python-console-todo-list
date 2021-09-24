@@ -1,9 +1,0 @@
-[    ]:E-Commerce
-[    ]:Keamanan komputer
-[    ]:Kewirausahaan
-[    ]:Manajemen proyek informatika
-[    ]:Metode penelitian
-[    ]:Teknik riset operasional
-[    ]:Metode numerik
-[    ]:Sistem penunjang keputusan
-[    ]:Testing QnA
