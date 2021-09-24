@@ -9,6 +9,7 @@ class IOOperation:
 
     #read user input for an option or command
     #user commands: e exit, d delete, a add, num done/not, s save, r reset 
+    #TODO add comment
     @staticmethod
     def readUsrInput():
         usrInput = input(">> ")
@@ -35,6 +36,7 @@ class IOOperation:
             IOOperation.readNumberInput(usrInput)
 
 
+    #TODO add comment
     @staticmethod
     def readNumberInput(usrInput):
         try:
