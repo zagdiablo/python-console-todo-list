@@ -1,4 +1,4 @@
-# python-simple-todo-list
+# python-console-todo-list
 
 is a simple console todo list made with python
 
