@@ -1,10 +1,15 @@
-# python-console-todo-list
+# python-todo-list
 
-is a simple console todo list made in python
+is a simple text based todo list made in python
 
 
 ## Usage
 
+<ol>
+  <li><a href="https://www.python.org/">Install Python</a></li>
+  <li>Make sure Python is defined on PATH</li>
+  <li>Navigate to folder in CLI</li>
+</ol>
 ```bash
 python3 run.py
 ```
