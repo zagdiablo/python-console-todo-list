@@ -1,6 +1,6 @@
-# python-simple-todo-list
+# python-console-todo-list
 
-is a simple console todo list made with python
+is a simple console todo list made in python
 
 
 ## Usage
