@@ -1,19 +1,23 @@
-# obj:
-# clear all, delete 1, delete all are Required
-# able to add new matkul to the list and delete it based on needs
+from modules.InputOutputOperation import IOOperation as io
+from modules.DisplayOperation import Display as d
 
 
-import modules.Display as dp
-import modules.FileOperation as fo
+#TODO create a h (help) option
+#TODO create delete all list item function
+#TODO maintain and clean the code periodically
 
 
+# main function
 def main():
-    #display all on the list
-    fo.FileOperation.checkFile()
-    dp.Display.display()
+    while True:
+        io.readDataFile()       #read data from Datafile.txt
+        d.displayList()         #display the data from DataFile.txt
+        d.displayOptions()      #show user options
+        io.readUsrInput()       #read user input
 
-
-    
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:   #exit if ctrl+c is pressed on keyboard
+        print("exiting...")
