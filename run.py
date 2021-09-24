@@ -2,7 +2,6 @@ from modules.InputOutputOperation import IOOperation as io
 from modules.DisplayOperation import Display as d
 
 
-#TODO create a h (help) option
 #TODO create delete all list item function
 #TODO maintain and clean the code periodically
 

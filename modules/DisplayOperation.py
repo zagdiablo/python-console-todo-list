@@ -32,6 +32,7 @@ class Display:
             f"|input 'S' to save list                 |\n"+
             f"|input 'R' to reset list                |\n"+
             f"|input 'E' or press ctrl+c to exit      |\n"+
+            f"|input item number to mark done/undone  |\n"+
             f"+---------------------------------------+"
         )
 

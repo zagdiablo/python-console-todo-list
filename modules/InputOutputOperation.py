@@ -8,43 +8,49 @@ class IOOperation:
     ListDataStatus = []
 
     #read user input for an option or command
-    #user commands: e exit, d delete, a add, num done/not, s save, r reset 
-    #TODO add comment
+    #TODO add delete all list item option
     @staticmethod
     def readUsrInput():
         usrInput = input(">> ")
-
+        #option e: exit
         if usrInput.lower() == 'e':
             exit()
+        #option d: delete
         elif usrInput.lower() == 'd':
             try:
                 IOOperation.deleteListItem()
             except KeyboardInterrupt:
                 return
+        #option a: add
         elif usrInput.lower() == 'a':
             try:
                 IOOperation.addListItem()
             except KeyboardInterrupt:
                 return
+        #option s: save
         elif usrInput.lower() == 's':
             IOOperation.writeFile()
             print("list has been saved.")
             input("press any key to continue...")
+        #option r: reset
         elif usrInput.lower() == 'r':
             IOOperation.resetList()
+        #option number: read number inputs & other inputs
         else:
             IOOperation.readNumberInput(usrInput)
 
 
-    #TODO add comment
+    #read number & other input
     @staticmethod
     def readNumberInput(usrInput):
+        #convertin usrInput to int
         try:
             usrInput = int(usrInput)-1
         except ValueError:
             print(f"{usrInput} is invalid, unknown or unhandled input.")
             input("Press any key to continue")
             return
+        #mark item done or undone
         try:
             if IOOperation.ListDataStatus[usrInput] == '[    ]':
                 IOOperation.ListDataStatus[usrInput] = '[done]'
@@ -54,6 +60,7 @@ class IOOperation:
             print(f"{usrInput+1} is not available.")
             input("Press any key to continue")
             return
+        #rewrite list to ListData.txt file
         IOOperation.writeFile()
 
 
@@ -112,11 +119,9 @@ class IOOperation:
                 for line in f:
                     #split items and status to append
                     tempData = line.split(':')
-                    #append item status
+                    #append item and item status
                     IOOperation.ListDataStatus.append(tempData[0].strip())
-                    #append list item
                     IOOperation.ListData.append(tempData[1].strip())
-                    #print(IOOperation.ListDataStatus)
         #if ListData.txt is not available
         else:
             #create ListData.txt in data folder
@@ -127,6 +132,7 @@ class IOOperation:
     #and write it back to ListData.txt file
     @staticmethod
     def writeFile():
+        #check if ListData.txt is available
         if os.path.isfile("data/ListData.txt"):
             #delete and recreate ListData.txt
             IOOperation.generateDataFile()
