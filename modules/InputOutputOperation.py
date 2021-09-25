@@ -6,6 +6,8 @@ class IOOperation:
     #value from ListData.text is stored here as a list
     ListData = []
     ListDataStatus = []
+    #directory path
+    dir_path = os.path.dirname(os.path.realpath(__file__))
 
     #read user input for an option or command
     #TODO add delete all list item option
@@ -110,12 +112,12 @@ class IOOperation:
     @staticmethod
     def readDataFile():
         #check if ListData.txt is available
-        if os.path.isfile("data/ListData.txt"):
+        if os.path.isfile(f"{IOOperation.dir_path}/data/ListData.txt"):
             #clear List for each function call
             IOOperation.ListData = []
             #temporary list for splitting
             tempData = []
-            with open("data/ListData.txt", "r") as f:
+            with open(f"{IOOperation.dir_path}/data/ListData.txt", "r") as f:
                 for line in f:
                     #split items and status to append
                     tempData = line.split(':')
@@ -133,10 +135,10 @@ class IOOperation:
     @staticmethod
     def writeFile():
         #check if ListData.txt is available
-        if os.path.isfile("data/ListData.txt"):
+        if os.path.isfile(f"{IOOperation.dir_path}/data/ListData.txt"):
             #delete and recreate ListData.txt
             IOOperation.generateDataFile()
-            with open("data/ListData.txt", "w") as f:
+            with open(f"{IOOperation.dir_path}/data/ListData.txt", "w") as f:
                 for item, status in zip(IOOperation.ListData, IOOperation.ListDataStatus):
                     #join item with the status and write it to ListData.txt file
                     f.write(f"{status}:{item}\n")
@@ -149,5 +151,5 @@ class IOOperation:
     #generate ListData.txt in data folder
     @staticmethod
     def generateDataFile():
-        f = open("data/ListData.txt", "w+")
+        f = open(f"{IOOperation.dir_path}/data/ListData.txt", "w+")
         f.close()
