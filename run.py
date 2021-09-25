@@ -3,8 +3,7 @@ from modules.DisplayOperation import Display as d
 
 
 #TODO create delete all list item function
-#TODO maintain and clean the code periodically
-
+#TODO maintain and clean the code 
 
 # main function
 def main():
